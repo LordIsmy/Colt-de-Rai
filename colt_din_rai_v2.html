@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colț din Rai — Pensiune Baia de Fier, Gorj</title>
+  <meta name="description" content="Pensiunea Colț din Rai din Baia de Fier, Gorj. Cazare lângă Peștera Muierilor și traseele montane din Munții Parâng. Rezervări: 0785 612 368.">
+  <meta property="og:title" content="Colț din Rai — Pensiune Baia de Fier">
+  <meta property="og:description" content="Cazare la munte lângă Peștera Muierilor, Munții Parâng, Gorj.">
+  <meta name="theme-color" content="#0e1a0b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0e1a0b;
+      --bg2:       #162112;
+      --bg3:       #1d2c19;
+      --card:      #1a2616;
+      --green:     #4c9a2a;
+      --green-lt:  #6dba45;
+      --green-dim: #2d5c18;
+      --cream:     #f0ebe0;
+      --cream2:    #d9d2c3;
+      --muted:     #7a8c72;
+      --border:    rgba(255,255,255,0.07);
+      --radius:    14px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--cream);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 1.25rem;
+      background: rgba(14,26,11,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-icon {
+      width: 34px; height: 34px; border-radius: var(--radius-sm);
+      background: var(--green-dim); border: 1px solid var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--green-lt);
+    }
+    .nav-brand span { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--cream); }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-links a {
+      font-size: 13px; color: var(--muted); padding: 6px 12px;
+      border-radius: var(--radius-sm); transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--cream); background: var(--bg3); }
+    .nav-cta {
+      font-size: 13px; font-weight: 500;
+      background: var(--green); color: #fff;
+      padding: 7px 16px; border-radius: var(--radius-sm);
+      border: none; cursor: pointer; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--green-lt); }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span { width: 22px; height: 2px; background: var(--cream); border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu {
+      display: none; flex-direction: column;
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 1rem 1.25rem; gap: 4px;
+    }
+    .mobile-menu a {
+      font-size: 15px; color: var(--muted); padding: 10px 12px;
+      border-radius: var(--radius-sm); transition: color 0.2s, background 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--cream); background: var(--bg3); }
+    .mobile-menu.open { display: flex; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100svh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      position: relative; overflow: hidden;
+      padding: 0 1.25rem 3.5rem;
+    }
+    .hero-scene {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(14,26,11,0.97) 0%, rgba(14,26,11,0.55) 45%, rgba(14,26,11,0.2) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 960px; margin: 0 auto; width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--green-lt);
+      margin-bottom: 1.2rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 28px; height: 1px; background: var(--green-lt);
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      color: var(--cream);
+      margin-bottom: 1rem;
+      max-width: 680px;
+    }
+    .hero h1 em { color: var(--green-lt); font-style: normal; }
+    .hero-sub {
+      font-size: clamp(14px, 2vw, 16px);
+      color: var(--cream2); max-width: 460px;
+      margin-bottom: 2rem; line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .btn-main {
+      background: var(--green); color: #fff;
+      padding: 13px 28px; border-radius: var(--radius-sm);
+      font-size: 14px; font-weight: 500; border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-main:hover { background: var(--green-lt); transform: translateY(-1px); }
+    .btn-ghost {
+      color: var(--cream2); font-size: 14px;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 13px 0; border: none; background: none; cursor: pointer;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--cream); }
+    .btn-ghost::after { content: '→'; transition: transform 0.2s; }
+    .btn-ghost:hover::after { transform: translateX(3px); }
+    .hero-stats {
+      margin-top: 2.5rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+    .hero-stat { }
+    .hero-stat-n { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--cream); }
+    .hero-stat-l { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+    /* ── SCROLL INDICATOR ── */
+    .scroll-hint {
+      position: absolute; bottom: 1.5rem; right: 1.5rem; z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      animation: bounce 2s infinite;
+    }
+    .scroll-hint span { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    .scroll-arrow { width: 1px; height: 40px; background: linear-gradient(to bottom, transparent, var(--green-lt)); }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 5rem 1.25rem;
+      max-width: 960px; margin: 0 auto;
+    }
+    .section-full {
+      padding: 5rem 1.25rem;
+      background: var(--bg2);
+    }
+    .section-full .inner { max-width: 960px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--green-lt);
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-bottom: 0.7rem;
+    }
+    .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--green); }
+
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--cream); margin-bottom: 0.6rem;
+    }
+    .lead {
+      font-size: 15px; color: var(--muted);
+      max-width: 520px; margin-bottom: 2.5rem; line-height: 1.7;
+    }
+
+    /* ── ZONES GRID ── */
+    .zones-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .zone-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .zone-card:hover { transform: translateY(-3px); border-color: var(--green-dim); }
+    .zone-card svg { width: 100%; display: block; }
+    .zone-info { padding: 14px 16px; }
+    .zone-info h3 { font-size: 15px; color: var(--cream); margin-bottom: 4px; font-family: 'Playfair Display', serif; font-weight: 600; }
+    .zone-info p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* ── ATTRACTIONS ── */
+    .attr-list { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .attr-row {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      padding: 1.3rem 1.5rem;
+      background: var(--card);
+      transition: background 0.2s;
+    }
+    .attr-row:hover { background: var(--bg3); }
+    .attr-num {
+      font-family: 'Playfair Display', serif; font-size: 1.5rem;
+      color: var(--green-dim); min-width: 36px; line-height: 1;
+      padding-top: 3px;
+    }
+    .attr-body h3 { font-size: 15px; color: var(--cream); margin-bottom: 4px; font-family: 'Inter', sans-serif; font-weight: 500; }
+    .attr-body p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .attr-tag {
+      margin-left: auto; flex-shrink: 0;
+      font-size: 11px; color: var(--green-lt);
+      background: var(--green-dim); padding: 3px 10px;
+      border-radius: 20px; align-self: flex-start; margin-top: 4px;
+    }
+
+    /* ── WHITE WOLF ── */
+    .wolf-block {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 2rem; background: var(--card);
+      display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start;
+    }
+    .wolf-icon-wrap {
+      width: 56px; height: 56px;
+      border-radius: var(--radius-sm);
+      background: var(--bg3); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; color: var(--muted); flex-shrink: 0;
+    }
+    .wolf-block h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--cream); margin-bottom: 8px; }
+    .wolf-block p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .wolf-badge {
+      display: inline-block; margin-top: 12px;
+      font-size: 12px; color: var(--muted);
+      border: 1px solid var(--border); padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* ── ROOMS ── */
+    .rooms-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .room-card {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; background: var(--card);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .room-card:hover { border-color: var(--green-dim); transform: translateY(-2px); }
+    .room-top {
+      height: 9px; background: var(--green);
+    }
+    .room-body { padding: 1.5rem; }
+    .room-body h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--cream); margin-bottom: 8px; }
+    .room-body p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
+    .room-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; color: var(--green-lt);
+    }
+    .room-price span { font-size: 13px; font-family: 'Inter', sans-serif; color: var(--muted); }
+    .room-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
+    .room-tag { font-size: 12px; color: var(--muted); border: 1px solid var(--border); padding: 4px 10px; border-radius: 20px; }
+
+    /* ── REZERVARE ── */
+    .form-wrap {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+    }
+    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    label { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+    input, select, textarea {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 11px 14px;
+      font-size: 14px; color: var(--cream); font-family: 'Inter', sans-serif;
+      outline: none; transition: border-color 0.2s;
+      width: 100%;
+    }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input:focus, select:focus, textarea:focus { border-color: var(--green); }
+    select option { background: var(--bg2); }
+    textarea { resize: vertical; min-height: 90px; }
+    .btn-submit {
+      width: 100%; padding: 14px; margin-top: 6px;
+      background: var(--green); color: #fff; border: none;
+      border-radius: var(--radius-sm); font-size: 15px; font-weight: 500;
+      cursor: pointer; transition: background 0.2s, transform 0.15s;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-submit:hover { background: var(--green-lt); transform: translateY(-1px); }
+    .form-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 10px; }
+    .success-box {
+      display: none; text-align: center; padding: 2.5rem 1rem;
+    }
+    .success-box .checkmark { font-size: 3rem; margin-bottom: 1rem; }
+    .success-box h3 { font-size: 1.3rem; color: var(--green-lt); margin-bottom: 0.5rem; }
+    .success-box p { font-size: 14px; color: var(--muted); }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .contact-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem;
+      display: flex; gap: 14px; align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .contact-card:hover { border-color: var(--green-dim); }
+    .contact-icon {
+      width: 40px; height: 40px; border-radius: var(--radius-sm);
+      background: var(--green-dim); display: flex; align-items: center;
+      justify-content: center; font-size: 20px; color: var(--green-lt);
+      flex-shrink: 0;
+    }
+    .contact-card h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 4px; }
+    .contact-card p { font-size: 14px; color: var(--cream); font-weight: 500; }
+    .contact-card a { color: var(--green-lt); }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      margin: 0 1.25rem 5rem;
+      max-width: 960px; margin-left: auto; margin-right: auto;
+      background: var(--green-dim);
+      border: 1px solid var(--green);
+      border-radius: var(--radius); padding: 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap;
+    }
+    .cta-banner h2 { font-size: 1.5rem; margin-bottom: 4px; }
+    .cta-banner p { font-size: 14px; color: rgba(240,235,224,0.65); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 2rem 1.25rem; text-align: center;
+    }
+    footer .foot-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 6px; }
+    footer p { font-size: 13px; color: var(--muted); }
+    footer a { color: var(--green-lt); }
+    .foot-divider { width: 40px; height: 1px; background: var(--green-dim); margin: 1rem auto; }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .hero { min-height: 100svh; padding-bottom: 3rem; }
+      .hero-stats { gap: 1.5rem; }
+      .scroll-hint { display: none; }
+
+      .zones-grid { grid-template-columns: 1fr; gap: 10px; }
+
+      .attr-row { flex-wrap: wrap; }
+      .attr-tag { margin-left: 0; margin-top: 6px; }
+
+      .wolf-block { grid-template-columns: 1fr; }
+      .wolf-icon-wrap { width: 44px; height: 44px; font-size: 22px; }
+
+      .rooms-grid { grid-template-columns: 1fr; }
+
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: 1; }
+
+      .contact-grid { grid-template-columns: 1fr; }
+
+      .cta-banner { text-align: center; justify-content: center; padding: 2rem 1.5rem; }
+
+      .section { padding: 3.5rem 1.25rem; }
+      .section-full { padding: 3.5rem 1.25rem; }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="nav-icon">🌲</div>
+      <span>Colț din Rai</span>
+    </div>
+    <div class="nav-links">
+      <a href="#zona">Zona</a>
+      <a href="#cazare">Cazare</a>
+      <a href="#rezervare">Rezervare</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#rezervare" class="nav-cta">Rezervă acum</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#zona" onclick="closeMenu()">Zona</a>
+    <a href="#cazare" onclick="closeMenu()">Cazare</a>
+    <a href="#rezervare" onclick="closeMenu()">Rezervare</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="tel:0785612368" style="color:#6dba45; font-weight:500; margin-top:4px;">📞 0785 612 368</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <svg class="hero-scene" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <!-- Cer nocturn -->
+    <rect width="1200" height="700" fill="#050d04"/>
+    <!-- Stele -->
+    <circle cx="100" cy="50" r="1.2" fill="white" opacity="0.7"/>
+    <circle cx="230" cy="30" r="0.8" fill="white" opacity="0.5"/>
+    <circle cx="380" cy="70" r="1" fill="white" opacity="0.6"/>
+    <circle cx="520" cy="25" r="1.5" fill="white" opacity="0.8"/>
+    <circle cx="660" cy="55" r="0.8" fill="white" opacity="0.5"/>
+    <circle cx="820" cy="35" r="1.2" fill="white" opacity="0.7"/>
+    <circle cx="950" cy="65" r="1" fill="white" opacity="0.6"/>
+    <circle cx="1080" cy="40" r="1.5" fill="white" opacity="0.8"/>
+    <circle cx="170" cy="110" r="0.8" fill="white" opacity="0.4"/>
+    <circle cx="450" cy="90" r="1" fill="white" opacity="0.5"/>
+    <circle cx="700" cy="120" r="0.7" fill="white" opacity="0.4"/>
+    <circle cx="900" cy="100" r="1" fill="white" opacity="0.6"/>
+    <circle cx="1150" cy="80" r="0.8" fill="white" opacity="0.5"/>
+    <!-- Luna -->
+    <circle cx="1050" cy="80" r="38" fill="#f5f0d8" opacity="0.18"/>
+    <circle cx="1050" cy="80" r="28" fill="#f5f0d8" opacity="0.14"/>
+    <circle cx="1050" cy="80" r="18" fill="#f5f0d8" opacity="0.2"/>
+    <!-- Munti fundal -->
+    <polygon points="0,400 150,180 300,350 450,150 600,320 750,140 900,300 1050,160 1200,280 1200,700 0,700" fill="#0a1508"/>
+    <!-- Munti mijloc -->
+    <polygon points="0,480 100,300 220,420 380,250 520,380 680,220 820,360 960,240 1100,370 1200,280 1200,700 0,700" fill="#0e1d0a"/>
+    <!-- Padure fundal -->
+    <polygon points="0,560 80,420 160,500 260,390 360,490 460,380 560,470 660,360 760,460 860,370 960,460 1060,380 1160,460 1200,420 1200,700 0,700" fill="#122a0e"/>
+    <!-- Padure prim-plan -->
+    <polygon points="0,620 60,500 120,570 200,480 280,560 370,460 460,550 560,440 660,540 760,450 860,550 960,460 1060,550 1160,470 1200,530 1200,700 0,700" fill="#173404"/>
+    <!-- Luminita verde la baza -->
+    <ellipse cx="600" cy="680" rx="500" ry="60" fill="#1a3d0a" opacity="0.8"/>
+  </svg>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Baia de Fier · Gorj · Munții Parâng</div>
+    <h1>Un <em>colț de rai</em><br>la munte</h1>
+    <p class="hero-sub">Liniște, natură și aer curat la poalele Munților Parâng — la câțiva pași de Peștera Muierilor și traseele de via ferrata.</p>
+    <div class="hero-actions">
+      <a href="#rezervare" class="btn-main">Rezervă o cameră</a>
+      <a href="#zona" class="btn-ghost">Descoperă zona</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-n">4 km</div>
+        <div class="hero-stat-l">Peștera Muierilor</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">150 lei</div>
+        <div class="hero-stat-l">cameră / noapte</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">10+</div>
+        <div class="hero-stat-l">trasee montane</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ZONA -->
+<section class="section" id="zona">
+  <div class="eyebrow">Împrejurimi</div>
+  <h2>Baia de Fier din priviri</h2>
+  <p class="lead">Trei dintre cele mai frumoase fețe ale zonei — peșteră, munte și adrenalină.</p>
+  <div class="zones-grid">
+    <div class="zone-card">
+      <svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="340" height="200" fill="#04342C"/>
+        <ellipse cx="170" cy="130" rx="160" ry="95" fill="#085041"/>
+        <ellipse cx="120" cy="115" rx="75" ry="52" fill="#0F6E56" opacity="0.8"/>
+        <ellipse cx="220" cy="108" rx="65" ry="46" fill="#0F6E56" opacity="0.7"/>
+        <rect x="90" y="100" width="160" height="100" fill="#04342C" rx="8"/>
+        <ellipse cx="170" cy="100" rx="90" ry="32" fill="#085041"/>
+        <rect x="145" y="120" width="50" height="80" fill="#0F6E56" rx="4"/>
+        <rect x="118" y="108" width="26" height="38" fill="#1D9E75" opacity="0.55" rx="3"/>
+        <rect x="196" y="112" width="26" height="34" fill="#1D9E75" opacity="0.45" rx="3"/>
+        <!-- stalactite hints -->
+        <rect x="155" y="100" width="3" height="18" fill="#5DCAA5" opacity="0.3" rx="1"/>
+        <rect x="170" y="100" width="3" height="22" fill="#5DCAA5" opacity="0.3" rx="1"/>
+        <rect x="185" y="100" width="3" height="15" fill="#5DCAA5" opacity="0.3" rx="1"/>
+      </svg>
+      <div class="zone-info">
+        <h3>Peștera Muierilor</h3>
+        <p>Formațiuni spectaculoase, tururi ghidate. La 4 km de pensiune.</p>
+      </div>
+    </div>
+    <div class="zone-card">
+      <svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="340" height="200" fill="#04182b"/>
+        <rect x="0" y="105" width="340" height="95" fill="#0e2208"/>
+        <!-- stele -->
+        <circle cx="60" cy="35" r="1.5" fill="white" opacity="0.7"/>
+        <circle cx="180" cy="20" r="1" fill="white" opacity="0.6"/>
+        <circle cx="290" cy="45" r="1.2" fill="white" opacity="0.7"/>
+        <circle cx="120" cy="60" r="0.8" fill="white" opacity="0.5"/>
+        <!-- luna -->
+        <circle cx="60" cy="38" r="16" fill="#f5f0d8" opacity="0.22"/>
+        <circle cx="60" cy="38" r="10" fill="#f5f0d8" opacity="0.18"/>
+        <!-- munti -->
+        <polygon points="0,140 60,50 120,120 200,35 280,110 340,70 340,200 0,200" fill="#122a0e"/>
+        <polygon points="0,155 80,90 150,140 230,75 310,130 340,110 340,200 0,200" fill="#173404"/>
+        <polygon points="0,170 90,130 170,160 260,120 340,150 340,200 0,200" fill="#1d3a08"/>
+        <!-- snow caps -->
+        <polygon points="200,35 215,55 185,55" fill="white" opacity="0.25"/>
+        <polygon points="60,50 75,72 45,72" fill="white" opacity="0.2"/>
+      </svg>
+      <div class="zone-info">
+        <h3>Munții Parâng</h3>
+        <p>Trasee marcate, peisaje alpine, vârfuri la peste 2400m altitudine.</p>
+      </div>
+    </div>
+    <div class="zone-card">
+      <svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="340" height="200" fill="#1a1410"/>
+        <rect x="0" y="128" width="340" height="72" fill="#2c2218"/>
+        <!-- stanci -->
+        <polygon points="20,128 70,42 120,128" fill="#3d3228"/>
+        <polygon points="100,128 165,25 230,128" fill="#4a3d30"/>
+        <polygon points="210,128 265,48 320,128" fill="#3d3228"/>
+        <!-- bare verticale -->
+        <line x1="70" y1="42" x2="70" y2="128" stroke="#c0392b" stroke-width="3"/>
+        <line x1="165" y1="25" x2="165" y2="128" stroke="#c0392b" stroke-width="3"/>
+        <line x1="265" y1="48" x2="265" y2="128" stroke="#c0392b" stroke-width="3"/>
+        <!-- cabluri orizontale -->
+        <line x1="55" y1="80" x2="115" y2="68" stroke="#8a7a6a" stroke-width="2"/>
+        <line x1="118" y1="66" x2="210" y2="58" stroke="#8a7a6a" stroke-width="2"/>
+        <line x1="208" y1="60" x2="278" y2="75" stroke="#8a7a6a" stroke-width="2"/>
+        <!-- ancore -->
+        <circle cx="70" cy="42" r="6" fill="#e74c3c"/>
+        <circle cx="165" cy="25" r="6" fill="#e74c3c"/>
+        <circle cx="265" cy="48" r="6" fill="#e74c3c"/>
+        <!-- catarator -->
+        <circle cx="120" cy="63" r="7" fill="#f5f0d8" opacity="0.9"/>
+        <rect x="117" y="70" width="6" height="14" fill="#f5f0d8" opacity="0.9" rx="3"/>
+      </svg>
+      <div class="zone-info">
+        <h3>Via ferrata</h3>
+        <p>Trasee echipate, menținute de Clubul Montan White Wolf. Adrenalină garantată.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ATRACTII -->
+<div class="section-full">
+  <div class="inner">
+    <div class="eyebrow">De făcut</div>
+    <h2>Atracțiile zonei</h2>
+    <p class="lead">De la speologie la drumeții alpine — Baia de Fier are ceva pentru fiecare.</p>
+    <div class="attr-list">
+      <div class="attr-row">
+        <div class="attr-num">01</div>
+        <div class="attr-body">
+          <h3>Peștera Muierilor</h3>
+          <p>Una dintre cele mai mari peșteri din România, cu formațiuni stalactitice impresionante. Tururi ghidate zilnic, accesibil familiilor.</p>
+        </div>
+        <div class="attr-tag">4 km</div>
+      </div>
+      <div class="attr-row">
+        <div class="attr-num">02</div>
+        <div class="attr-body">
+          <h3>Trasee montane Parâng</h3>
+          <p>Rețea extinsă de trasee marcate pentru toate nivelurile de dificultate, de la plimbări ușoare la ascensiuni alpine.</p>
+        </div>
+        <div class="attr-tag">Toate nivelurile</div>
+      </div>
+      <div class="attr-row">
+        <div class="attr-num">03</div>
+        <div class="attr-body">
+          <h3>Via ferrata Baia de Fier</h3>
+          <p>Trasee echipate cu bare, scări și cabluri de siguranță pe pereți stâncoși. Menținute de Clubul Montan White Wolf.</p>
+        </div>
+        <div class="attr-tag">Aventură</div>
+      </div>
+      <div class="attr-row">
+        <div class="attr-num">04</div>
+        <div class="attr-body">
+          <h3>Bucătărie tradițională oltenească</h3>
+          <p>Preparate autentice din regiune — sarmale, tocane, mămăligă cu brânză. Gătit cu ingrediente locale proaspete.</p>
+        </div>
+        <div class="attr-tag">La pensiune</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- WHITE WOLF -->
+<section class="section">
+  <div class="eyebrow">Mentenanță trasee</div>
+  <h2>Clubul Montan White Wolf</h2>
+  <p class="lead">Oamenii din spatele traseelor sigure de via ferrata din Baia de Fier.</p>
+  <div class="wolf-block">
+    <div class="wolf-icon-wrap">🐺</div>
+    <div>
+      <h3>Gardienii viei ferate din Parâng</h3>
+      <p>Clubul Montan White Wolf din Baia de Fier este organizația dedicată mentenanței și integrității traseelor de via ferrata din zonă. Datorită activității lor voluntare și constante, traseele sunt sigure, bine marcate și accesibile tot timpul anului. O prezență esențială care face din Baia de Fier o destinație de via ferrata de încredere.</p>
+      <span class="wolf-badge">🔧 Mentenanță și siguranță trasee via ferrata</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CAZARE -->
+<div class="section-full" id="cazare">
+  <div class="inner">
+    <div class="eyebrow">Cazare</div>
+    <h2>Camerele noastre</h2>
+    <p class="lead">Confort simplu și curat, cu tot ce ai nevoie după o zi în munte.</p>
+    <div class="rooms-grid">
+      <div class="room-card">
+        <div class="room-top"></div>
+        <div class="room-body">
+          <h3>Cameră dublă</h3>
+          <p>Pat matrimonial, baie privată, lenjerie curată, vedere spre grădină sau munte. Ideală pentru cupluri sau o persoană.</p>
+          <div class="room-price">150 <span>lei / noapte</span></div>
+          <div class="room-tags">
+            <span class="room-tag">Baie privată</span>
+            <span class="room-tag">Pat matrimonial</span>
+            <span class="room-tag">Wi-Fi</span>
+            <span class="room-tag">Parcare</span>
+          </div>
+        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-top"></div>
+        <div class="room-body">
+          <h3>Apartament familial</h3>
+          <p>Două dormitoare separate, living, baie. Spațios și confortabil, perfect pentru familii cu copii sau grupuri mici.</p>
+          <div class="room-price">300 <span>lei / noapte</span></div>
+          <div class="room-tags">
+            <span class="room-tag">2 dormitoare</span>
+            <span class="room-tag">Living</span>
+            <span class="room-tag">Wi-Fi</span>
+            <span class="room-tag">Parcare</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- REZERVARE -->
+<section class="section" id="rezervare">
+  <div class="eyebrow">Rezervare</div>
+  <h2>Faceți o rezervare</h2>
+  <p class="lead">Completați formularul și vă sunăm în cel mai scurt timp pentru confirmare.</p>
+  <div class="form-wrap">
+    <form id="rezForm" onsubmit="handleSubmit(event)">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="nume">Nume și prenume</label>
+          <input type="text" id="nume" name="nume" placeholder="Ion Popescu" required>
+        </div>
+        <div class="form-group">
+          <label for="telefon">Telefon</label>
+          <input type="tel" id="telefon" name="telefon" placeholder="07XX XXX XXX" required>
+        </div>
+        <div class="form-group">
+          <label for="checkin">Check-in</label>
+          <input type="date" id="checkin" name="checkin" required>
+        </div>
+        <div class="form-group">
+          <label for="checkout">Check-out</label>
+          <input type="date" id="checkout" name="checkout" required>
+        </div>
+        <div class="form-group">
+          <label for="camera">Tip cameră</label>
+          <select id="camera" name="camera">
+            <option>Cameră dublă — 150 lei/noapte</option>
+            <option>Apartament familial — 300 lei/noapte</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="persoane">Număr persoane</label>
+          <select id="persoane" name="persoane">
+            <option>1 persoană</option>
+            <option selected>2 persoane</option>
+            <option>3 persoane</option>
+            <option>4+ persoane</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="mesaj">Mesaj (opțional)</label>
+          <textarea id="mesaj" name="mesaj" placeholder="Cerințe speciale, întrebări despre trasee sau activități..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn-submit">Trimite cererea de rezervare</button>
+      <p class="form-note">Vă vom contacta la numărul furnizat pentru confirmare.</p>
+    </form>
+    <div class="success-box" id="successBox">
+      <div class="checkmark">✅</div>
+      <h3>Cererea a fost trimisă!</h3>
+      <p>Vă vom suna în curând la numărul furnizat pentru a confirma rezervarea.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<div class="section-full" id="contact">
+  <div class="inner">
+    <div class="eyebrow">Contact</div>
+    <h2>Unde ne găsești</h2>
+    <p class="lead">Suntem la dispoziția dumneavoastră pentru orice întrebare.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Adresă</h4>
+          <p>Str. Viorelelor nr. 27<br>Baia de Fier, Gorj</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4>Telefon</h4>
+          <p><a href="tel:0785612368">0785 612 368</a></p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <h4>Email</h4>
+          <p>De completat</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📱</div>
+        <div>
+          <h4>Social media</h4>
+          <p>Facebook · Instagram</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div style="padding: 0 1.25rem; max-width: 960px; margin: 3rem auto;">
+  <div class="cta-banner">
+    <div>
+      <h2>Gata de munte?</h2>
+      <p>Locuri disponibile — rezervați din timp pentru weekend-uri și sărbători.</p>
+    </div>
+    <a href="#rezervare" class="btn-main">Rezervă acum</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">Colț din Rai</div>
+  <div class="foot-divider"></div>
+  <p>Str. Viorelelor nr. 27, Baia de Fier, Gorj</p>
+  <p style="margin-top:4px;"><a href="tel:0785612368">0785 612 368</a></p>
+  <p style="margin-top:12px; font-size:12px;">© 2024 Pensiunea Colț din Rai · Toate drepturile rezervate</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('checkin').min = today;
+  document.getElementById('checkout').min = today;
+  document.getElementById('checkin').addEventListener('change', function() {
+    document.getElementById('checkout').min = this.value;
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('rezForm').style.display = 'none';
+    document.getElementById('successBox').style.display = 'block';
+  }
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(14,26,11,0.97)';
+    } else {
+      nav.style.background = 'rgba(14,26,11,0.85)';
+    }
+  });
+</script>
+
+</body>
+</html>
